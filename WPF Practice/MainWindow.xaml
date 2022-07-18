@@ -5,16 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Practice"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button>
-            <Button.Content>
-                <WrapPanel>
-                    <TextBlock Foreground="Blue" Margin="5">Multi</TextBlock>
-                    <TextBlock Foreground="Red" Margin="5">Color</TextBlock>
-                    <TextBlock Margin="5">Button</TextBlock>
-                </WrapPanel>
-            </Button.Content>
-        </Button>
-    </Grid>
+        Title="MainWindow" Height="190" Width="250">
+    <StackPanel Margin="20">
+        <TextBlock TextWrapping="Wrap">Showing number format in different culture</TextBlock>
+        <Label FontSize="16">Numbers:</Label>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0">USA: </Label>
+            <Label Grid.Row="0" Grid.Column="1" Name="usNumber" HorizontalAlignment="Right"></Label>
+            <Label Grid.Row="1" Grid.Column="0">Germany: </Label>
+            <Label Grid.Row="1" Grid.Column="1" Name="deNumber" HorizontalAlignment="Right"></Label>
+            <Label Grid.Row="2" Grid.Column="0">Sweden: </Label>
+            <Label Grid.Row="2" Grid.Column="1" Name="svNumber" HorizontalAlignment="Right"></Label>
+        </Grid>
+    </StackPanel>
 </Window>
