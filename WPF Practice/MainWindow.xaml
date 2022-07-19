@@ -6,26 +6,20 @@
         xmlns:local="clr-namespace:WPF_Practice"
         mc:Ignorable="d"
         Title="MainWindow" Height="190" Width="250">
-    <StackPanel Margin="20">
-        <TextBlock TextWrapping="Wrap">Showing number format in different culture</TextBlock>
-        <Label FontSize="16">Numbers:</Label>
-        <Grid >
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            
-            <Label Grid.Row="0" Grid.Column="0">USA: </Label>
-            <Label Grid.Row="0" Grid.Column="1" Name="usNumber" HorizontalAlignment="Right"></Label>
-            <Label Grid.Row="1" Grid.Column="0">Germany: </Label>
-            <Label Grid.Row="1" Grid.Column="1" Name="deNumber" HorizontalAlignment="Right"></Label>
-            <Label Grid.Row="2" Grid.Column="0">Sweden: </Label>
-            <Label Grid.Row="2" Grid.Column="1" Name="svNumber" HorizontalAlignment="Right"></Label>
-        </Grid>
+    <StackPanel Margin="10">
+        <Label Target="{Binding ElementName=txtName}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/icons/user.png" Width="16" Margin="0,0,5,0"/>
+                <AccessText Text="_Name"/>
+            </StackPanel>
+        </Label>
+        <TextBox Name="txtName"/>
+        <Label Target="{Binding ElementName=txtPassword}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/icons/lock.png" Width="16" Margin="0,0,5,0"/>
+                <AccessText Text="_Password"/>
+            </StackPanel>
+        </Label>
+        <TextBox Name="txtPassword"/>
     </StackPanel>
 </Window>

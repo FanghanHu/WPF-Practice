@@ -24,10 +24,6 @@ namespace WPF_Practice
         public MainWindow()
         {
             InitializeComponent();
-            double num = 123456789.12345;
-            usNumber.Content = num.ToString("N2", new CultureInfo("en-US"));
-            deNumber.Content = num.ToString("N2", new CultureInfo("de-DE"));
-            svNumber.Content = num.ToString("N2", new CultureInfo("sv-SE"));
         }
     }
 }
