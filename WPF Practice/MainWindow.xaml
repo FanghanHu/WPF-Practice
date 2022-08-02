@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="190" Width="250">
     <StackPanel Margin="10">
-        <local:LimitedInput Title="asd" MaxLength="200" Height="100"/>
+        <TextBox Name="txtValue"/>
+        <WrapPanel>
+            <TextBlock Text="Value: "/>
+            <TextBlock Name="lblValue"/>
+        </WrapPanel>
     </StackPanel>
 </Window>

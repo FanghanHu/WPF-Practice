@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace WPF_Practice
 {
@@ -10,6 +12,10 @@ namespace WPF_Practice
         public MainWindow()
         {
             InitializeComponent();
+
+            Binding binding = new Binding("Text");
+            binding.Source = txtValue;
+            lblValue.SetBinding(TextBlock.TextProperty, binding);
         }
     }
 }
