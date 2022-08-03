@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:WPF_Practice"
         mc:Ignorable="d"
         Title="MainWindow" Height="190" Width="250">
-    <StackPanel Margin="10">
-        <TextBox Name="txtValue"/>
-        <WrapPanel>
-            <TextBlock Text="Value: "/>
-            <TextBlock Name="lblValue"/>
-        </WrapPanel>
-    </StackPanel>
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Right">
+            <Button Name="btnAddUser" Click="btnAddUser_Click">Add User</Button>
+            <Button Name="btnChangeUser" Click="btnChangeUser_Click">Change User</Button>
+            <Button Name="btnDeleteUser" Click="btnDeleteUser_Click">Delete User</Button>
+        </StackPanel>
+        <ListBox Name="lbUsers" DisplayMemberPath="Name"></ListBox>
+    </DockPanel>
 </Window>
