@@ -13,5 +13,15 @@ namespace WPF_Practice
         {
             InitializeComponent();
         }
+
+        private void CommandBinding_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void CommandBinding_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="190" Width="250">
     <Window.Resources>
-        <local:YesNoBooleanConverter x:Key="YesNoBooleanConverter"/>
     </Window.Resources>
-    <StackPanel Margin="10">
-        <TextBox Name="txtValue"/>
-        <WrapPanel >
-            <TextBlock Text="The Current Value is: "></TextBlock>
-            <TextBlock Text="{Binding ElementName=txtValue, Path=Text, Converter={StaticResource YesNoBooleanConverter}}"/>
-        </WrapPanel>
-        <CheckBox IsChecked="{Binding ElementName=txtValue, Path=Text, Converter={StaticResource YesNoBooleanConverter}}">Yes</CheckBox>
-    </StackPanel>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomCommands.Exit" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Command="local:CustomCommands.Exit"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Command="local:CustomCommands.Exit">Exit</Button>
+        </StackPanel>
+    </DockPanel>
 </Window>
