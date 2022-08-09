@@ -67,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="YesNoBooleanConverter.cs" />
     <Compile Include="LimitedInput.xaml.cs">
       <DependentUpon>LimitedInput.xaml</DependentUpon>
     </Compile>
