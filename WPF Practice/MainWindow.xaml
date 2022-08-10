@@ -8,17 +8,10 @@
         Title="MainWindow" Height="190" Width="250">
     <Window.Resources>
     </Window.Resources>
-    <Window.CommandBindings>
-        <CommandBinding Command="local:CustomCommands.Exit" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed"/>
-    </Window.CommandBindings>
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File">
-                <MenuItem Command="local:CustomCommands.Exit"/>
-            </MenuItem>
-        </Menu>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Command="local:CustomCommands.Exit">Exit</Button>
+    <DockPanel Margin="10">
+        <StackPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
+            <Button Name="btnSaveFile" Click="btnSaveFile_Click">Save file</Button>
         </StackPanel>
+        <TextBox Name="txtEditor" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
     </DockPanel>
 </Window>

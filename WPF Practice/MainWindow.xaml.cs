@@ -1,5 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using Microsoft.Win32;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 
 namespace WPF_Practice
@@ -14,14 +16,14 @@ namespace WPF_Practice
             InitializeComponent();
         }
 
-        private void CommandBinding_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void btnSaveFile_Click(object sender, RoutedEventArgs e)
         {
-            e.CanExecute = true;
-        }
-
-        private void CommandBinding_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Text File|*.txt";
+            if(dialog.ShowDialog() == true)
+            {
+                File.WriteAllText(dialog.FileName, txtEditor.Text);
+            }
         }
     }
 }
