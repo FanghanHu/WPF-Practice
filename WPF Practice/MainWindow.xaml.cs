@@ -9,20 +9,26 @@ namespace WPF_Practice
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        public string Result { set; get; }
+
         public MainWindow()
         {
             InitializeComponent();
+            Result = "[No Name]";
+            DataContext = this;
         }
 
-        private void btnSaveFile_Click(object sender, RoutedEventArgs e)
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Text File|*.txt";
+            NameInputDialog dialog = new NameInputDialog();
             if(dialog.ShowDialog() == true)
             {
-                File.WriteAllText(dialog.FileName, txtEditor.Text);
+                Result = dialog.Result;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Result"));
             }
         }
     }

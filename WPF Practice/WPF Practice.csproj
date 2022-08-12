@@ -68,6 +68,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CustomCommands.cs" />
+    <Compile Include="NameInputDialog.xaml.cs">
+      <DependentUpon>NameInputDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="YesNoBooleanConverter.cs" />
     <Compile Include="LimitedInput.xaml.cs">
       <DependentUpon>LimitedInput.xaml</DependentUpon>
@@ -76,6 +79,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NameInputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

@@ -9,9 +9,13 @@
     <Window.Resources>
     </Window.Resources>
     <DockPanel Margin="10">
-        <StackPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
-            <Button Name="btnSaveFile" Click="btnSaveFile_Click">Save file</Button>
+        <StackPanel DockPanel.Dock="Bottom">
+            <Button Click="Button_Click">Enter Name</Button>
         </StackPanel>
-        <TextBox Name="txtEditor" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBlock HorizontalAlignment="Center">
+            The name is: 
+            <LineBreak/>
+            <TextBlock Text="{Binding Result}"/>
+        </TextBlock>
     </DockPanel>
 </Window>
